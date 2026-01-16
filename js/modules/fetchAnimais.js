@@ -12,8 +12,8 @@ export default function initFetchAnimais() {
         numerosGrid.appendChild(divAnimal);
       });
       initAnimaNumeros();
-    } catch(erro) {
-      console.log(erro)
+    } catch (erro) {
+      console.log(erro);
     }
   }
 
