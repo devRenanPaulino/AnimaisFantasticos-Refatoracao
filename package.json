@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack ./js/script.js --mode production --output-filename main.js --output-path .",
-    "dev": "webpack ./js/script.js --watch --mode development --output-filename main.js --output-path ."
+    "build": "webpack --mode production",
+    "dev": "webpack --watch --mode development"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,11 @@
   },
   "homepage": "https://github.com/devRenanPaulino/AnimaisFantasticos-Refatoracao#readme",
   "devDependencies": {
+    "@babel/core": "^7.28.6",
+    "@babel/plugin-transform-runtime": "^7.28.5",
+    "@babel/preset-env": "^7.28.6",
+    "@babel/runtime": "^7.28.6",
+    "babel-loader": "^10.0.0",
     "eslint": "^9.39.2",
     "webpack": "^5.104.1",
     "webpack-cli": "^6.0.1"

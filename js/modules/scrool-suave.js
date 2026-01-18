@@ -1,17 +1,23 @@
-export default function initScrollSuave() {
-  const linksInternos = document.querySelectorAll(
-    '[data-menu="suave"] a[href^="#"]'
-  );
+export default class ScrollSuave {
+  constructor(links, options) {
+    this.linksInternos = document.querySelectorAll(links);
+    if (options === undefined) {
+      this.options = {
+        behavior: "smooth",
+        block: "start",
+      };
+    } else {
+      this.options = options;
+    }
+    this.scrollToSection = this.scrollToSection.bind(this);
+  }
 
-  function scrollToSection(event) {
+  scrollToSection(event) {
     event.preventDefault();
     const href = event.currentTarget.getAttribute("href");
     const section = document.querySelector(href);
 
-    section.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    section.scrollIntoView(this.options);
 
     //forma alternativa
     // const topSection = section.offsetTop;
@@ -21,9 +27,16 @@ export default function initScrollSuave() {
     // });
   }
 
-  if (linksInternos.length) {
-    linksInternos.forEach((link) => {
-      link.addEventListener("click", scrollToSection);
+  addLinkEvent() {
+    this.linksInternos.forEach((link) => {
+      link.addEventListener("click", this.scrollToSection);
     });
+  }
+
+  init() {
+    if (this.linksInternos.length) {
+      this.addLinkEvent();
+    }
+    return this;
   }
 }
