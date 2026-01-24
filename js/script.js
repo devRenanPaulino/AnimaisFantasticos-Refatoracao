@@ -34,8 +34,8 @@ dropDownMenus.init();
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init();
 
-const funcionamento = new Funcionamento("[data-semana]", "aberto");
-funcionamento.init();
+const funcionamentoLoja = new Funcionamento("[data-semana]", "aberto");
+funcionamentoLoja.init();
 
-fetchAnimais('./animaisapi.json', ".numeros-grid");
+fetchAnimais('./animaisAPI.json', ".numeros-grid");
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
