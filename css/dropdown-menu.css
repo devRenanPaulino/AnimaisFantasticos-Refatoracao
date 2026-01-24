@@ -9,7 +9,7 @@
 [data-dropdown]:hover .dropdown-menu,
 [data-dropdown].active .dropdown-menu {
   display: block;
-  animation: show-up .3s forwards;
+  animation: show-up 0.3s forwards;
 }
 
 @keyframes show-up {
@@ -23,7 +23,6 @@
   }
 }
 
-
 .dropdown-menu {
   position: absolute;
   top: 38px;
@@ -33,7 +32,7 @@
 }
 
 .dropdown-menu::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: -10px;
@@ -44,6 +43,13 @@
   border-bottom: 10px solid #e54;
 }
 
-.dropdown-menu li a:hover{
+.dropdown-menu li a:hover {
   color: white;
+}
+
+@media (max-width: 700px) {
+  [data-dropdown] .dropdown-menu {
+    display: block;
+    animation: show-up 0.3s forwards;
+  }
 }
